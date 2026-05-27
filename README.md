@@ -1,7 +1,7 @@
 # Marketing Analytics and User Growth Forecasting
 
 <p align="center">
-      <img src="banner.png" alt="Marketing Banner" width="100%">
+      <img src="images/banner.png" alt="Marketing Banner" width="100%">
 </p>
 
 ## 📌 Project Overview
@@ -45,14 +45,10 @@ Thorough EDA was conducted to validate the simulated patterns.
     *(Demonstrates the strong positive linear relationship.)*
 
 
-*   ## Correlation Matrix:
-    ![Correlation Heatmap](images/correlation_heatmap.png)
-    *(Highlights `Ad_Spend` as the most highly correlated feature with target variable.)*
-
-## 📈 Time Series Analysis and SARIMAX
+## 📈 Time Series Analysis
 The target variable was analyzed for stationarity and seasonal patterns.
 *   **Decomposition (Trend, Seasonality, Residuals):**
-    ![Decomposition Plot](images/sarimax_forecast.png)
+    ![Decomposition Plot](images/time_series_decomposition.png)
 *   **Autocorrelation (ACF & PACF):** Significant lags were found at 1 and 7 days.
 *   **ADF Test:** Confirmed the series is stationary ($p-value \approx 0.0067$).
 
