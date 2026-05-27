@@ -1,7 +1,22 @@
-# Marketing Analytics & User Growth Modeling
+# Marketing Analytics and User Growth Forecasting
+
+<p align="center">
+      <img src="banner.png" alt="Marketing Banner" width="100%">
+</p>
 
 ## 📌 Project Overview
-This project is an end-to-end data science pipeline that simulates, analyzes, and predicts Daily Active Users (DAU) based on marketing expenditures, time trends, and seasonal effects. The workflow includes custom data generation (Simulation), Exploratory Data Analysis (EDA), Statistical Testing, Time Series Analysis, and Predictive Modeling using Linear Regression and SARIMAX.
+This project is an end-to-end data science workFlow that simulates, analyzes, and predicts Daily Active Users (DAU) based on marketing expenditures, time trends, and seasonal effects. The workflow includes custom data generation (Simulation), Exploratory Data Analysis (EDA), Statistical Testing, Time Series Analysis, and Predictive Modeling using Linear Regression and SARIMAX.
+
+## 📄 Full Report
+
+> **Complete Project Documentation**  
+> Detailed explanations of the methodology, statistical tests, visualizations, and model interpretation are available in the full report.  
+>
+> **[📘 View Full Report](./Report.pdf)**
+>
+> **[📘 View Full Persian Report](./Report_Persian.pdf)**
+
+
 
 ## ⚙️ Data Simulation
 To mimic real-world business scenarios, the dataset (180 days) was synthetically generated using a deterministic mathematical model combined with Poisson noise. 
@@ -15,28 +30,33 @@ $$Users\_Base = 100 + 3(Ad\_Spend) + 1.5(Ad\_Spend\_Lag1) + 2(Day) - 0.01(Day^2)
 *   `Day` & `Day^2`: Non-linear (parabolic) time trend.
 *   `is_weekend`: Binary flag for weekend spikes.
 
+---
+
 ## 📊 Exploratory Data Analysis (EDA)
 Thorough EDA was conducted to validate the simulated patterns. 
 
-*   **Weekend vs. Weekday Traffic:**
-    ![Weekend Boxplot](path/to/your/boxplot_image.png)
+*   ### Weekend vs. Weekday Traffic:
+    ![Weekend Boxplot](images/weekly_pattern.png)
     *(Shows a clear spike in users during weekends.)*
+    
 
-*   **Ad Spend vs. Users:**
-    ![Scatter Plot](path/to/your/scatter_image.png)
+*   ### Ad Spend vs. Users:
+    ![Scatter Plot](images/ad_spend_impact.png)
     *(Demonstrates the strong positive linear relationship.)*
 
-*   **Correlation Matrix:**
-    ![Correlation Heatmap](path/to/your/heatmap_image.png)
+
+*   ## Correlation Matrix:
+    ![Correlation Heatmap](images/correlation_heatmap.png)
     *(Highlights `Ad_Spend` as the most highly correlated feature with target variable.)*
 
-## 📈 Time Series Analysis
+## 📈 Time Series Analysis and SARIMAX
 The target variable was analyzed for stationarity and seasonal patterns.
 *   **Decomposition (Trend, Seasonality, Residuals):**
-    ![Decomposition Plot](path/to/your/decomposition_image.png)
+    ![Decomposition Plot](images/sarimax_forecast.png)
 *   **Autocorrelation (ACF & PACF):** Significant lags were found at 1 and 7 days.
 *   **ADF Test:** Confirmed the series is stationary ($p-value \approx 0.0067$).
-    ![ACF PACF Plots](path/to/your/acf_pacf_image.png)
+
+---
 
 ## 🚀 Modeling & Results
 Three models were trained and evaluated to predict daily users:
@@ -63,7 +83,7 @@ The comparison is based on three key metrics: **MAE**, **RMSE**, and **R²**.
 *   **Parameter Recovery:** The model successfully recovered the exact hidden parameters used during the simulation phase (e.g., estimating `Ad_Spend` coefficient as 2.82, very close to the true value of 3).
 *   **Residual Analysis:** Residuals were randomly distributed around zero, confirming the validity of the OLS assumptions.
 
-![Residuals Plot](path/to/your/residuals_image.png)
+![Residuals Plot](images/residual_plots_models.png)
 
 ---
 ## ✅ Conclusion
